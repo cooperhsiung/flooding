@@ -1,14 +1,14 @@
 {
   "name": "flooding",
-  "version": "1.0.0",
-  "description": "fire a function",
+  "version": "1.0.1",
+  "description": "make a function to execute like flooding",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://gitlab.com/cooperhsiung/flooding.git"
+    "url": "git+https://github.com/cooperhsiung/flooding.git"
   },
   "keywords": [
     "flooding"
@@ -16,9 +16,9 @@
   "author": "Cooper Hsiung",
   "license": "MIT",
   "bugs": {
-    "url": "https://gitlab.com/cooperhsiung/flooding/issues"
+    "url": "https://github.com/cooperhsiung/flooding/issues"
   },
-  "homepage": "https://gitlab.com/cooperhsiung/flooding#readme",
+  "homepage": "https://github.com/cooperhsiung/flooding#readme",
   "devDependencies": {
     "@types/node": "^12.7.5"
   }

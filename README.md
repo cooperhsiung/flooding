@@ -3,7 +3,9 @@
 [![NPM Version][npm-image]][npm-url]
 [![Node Version][node-image]][node-url]
 
-fire a function
+make a function to execute like flooding, suitable for ticket-snatching tasks.
+
+适用于执行抢票任务
 
 ## Installation
 
@@ -13,9 +15,18 @@ npm i flooding -S
 
 ## Usage
 
-
 ```typescript
+import flooding from 'flooding';
 
+function run() {
+  console.log('run at:', new Date());
+  // your tasks
+}
+
+flooding(run, {
+  fireAt: '2019-09-24 15:01:00',
+  frames: [30, 20, 10, 5, 3, 2, 1]
+});
 ```
 
 ## Todo

@@ -1,34 +1,36 @@
-const fireAt = '2019-09-24 10:58:00';
-let counts = [30, 20, 10, 5, 3, 2, 1];
 let timer: NodeJS.Timeout;
 let diffTimer: NodeJS.Timeout;
 
 type Options = {
   fireAt: string;
-  stopOver: number;
+  frames: number[];
+  expiry?: number;
 };
 
-export function flooding(run: Function) {
+export default function flooding(run: Function, options: Options) {
+  if (!options.expiry) {
+    options.expiry = 60;
+  }
   diffTimer = setInterval(() => {
-    const diff1 = diff();
-    const diff2 = Math.abs(diff1);
-    if (diff1 > 60) {
+    const diff = subtract(options.fireAt);
+    const diff_abs = Math.abs(diff);
+    if (diff > options.expiry!) {
       clearInterval(timer);
       clearInterval(diffTimer);
+      console.log('expired..');
     }
-    console.log('计时:', diff1, 's');
-    counts.forEach(count => {
-      if (diff2 === count) {
+    console.log('计时:', diff, 's');
+    options.frames.forEach(frame => {
+      if (diff_abs === frame) {
         clearInterval(timer);
         timer = setInterval(() => {
           run();
-        }, count * 100);
+        }, frame * 100);
       }
     });
   }, 1000);
 }
 
-function diff(): number {
-  // unit -> s
+function subtract(fireAt: string): number /* unit s*/ {
   return Math.round((Date.now() - new Date(fireAt).valueOf()) / 1000);
 }
