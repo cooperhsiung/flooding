@@ -29,6 +29,16 @@ flooding(run, {
 });
 ```
 
+## API
+
+```
+flooding(run: Function, options: {
+  fireAt: string; // 票券发售时刻
+  frames: number[]; // 倒计时刻开始执行任务，尾部执行频率加快
+  expiry?: number; // 超过 fireAt 多久停止任务，默认 60s
+}):void
+```
+
 ## Todo
 
 - [ ] xxxx
